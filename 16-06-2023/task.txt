@@ -1,0 +1,3 @@
+resolve name plus add his age plus his addresss
+
+
