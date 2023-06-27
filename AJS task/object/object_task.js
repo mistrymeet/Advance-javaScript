@@ -1,33 +1,41 @@
 // ---> make one object who contain your detail like - name,age,multiple vehicles
 // -name,and one function print your name and then do below given task
 
-// 1. print all value of your details object 
-// 2. add a function name printAge inside object who print age from outside
-// 3. get all key
-// 4. get all value
-// 5. add one key for city name and store your city name on it  from outside
-// 6. delete age key from object 
-// 7. make one function name addAge who print age with add some year which one pass by user
-
-
-let Student = {
+let student = {
     name:'meet',
     age:24,
     vehicals:['baleno','access','fz'],
     fun: ()=>{
         
     },
-    printAge: (age)=>{
-        return "age: " + age
+    printAge: (add)=>{
+        return "age: " + add 
     }
 }
 
-Student.printAge(24)
+// 1. print all value of your details object
+console.log(student)
 
-Student.city="surat"
-delete Student.age
+// 2. add a function name printAge inside object who print age from outside
+console.log(student.printAge(27))
 
-console.log(Student)
-console.log(Student.printAge(24))
-console.log(Object.keys(Student))
-console.log(Object.values(Student))
+// 3. get all key
+console.log('keys ====>',Object.keys(student))
+
+// 4. get all value
+console.log('values ====>',Object.values(student))
+
+// 5. add one key for city name and store your city name on it  from outside
+student.city="surat"
+
+// 6. make one function name addAge who print age with add some year which one pass by user
+student.addAge= function(num){
+    return num + this.age
+}
+console.log(student.addAge(25))
+
+// 7. delete age key from object 
+delete student.age
+console.log(student)
+
+
