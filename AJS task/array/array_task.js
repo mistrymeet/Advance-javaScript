@@ -1,28 +1,34 @@
 // -> make one array who have value from 1 to 10 
 let num = [1,2,3,4,5,6,7,8,9,10]
 
+delete num[3]
+console.log(num)
+console.log(num[3])
+num[3]= 4
+console.log(num)
+
 // 1. print 9th and 10th element of array
-console.log(num[8])
-console.log(num[9])
+console.log('num =',num[8])
+console.log('num =',num[9])
 
 // 2. print every element of array by map reduce and for loop
 let map = num.map((x)=>{
     return x
 })
-console.log(map)
+console.log(`map = ${map}`)
 
 let red = num.reduce((lastIndex,ele)=>{
     return lastIndex || ele
 })
-console.log(red)
+console.log(`reduce = ${red}`)
 
 for(let i=0;i<10;i++){
-    console.log(num[i])
+    console.log('loop =',num[i])
 }
 
 // 3. change a value of 6th element with 100
 let replace = num.splice(5,1,100)
-console.log(num)
+console.log(`replace = ${num}`)
 
 // 4. print a array till element value not gratter then 100
 
@@ -34,11 +40,11 @@ console.log(add)
 
 //6. add one 0 in start of array
 let zero = num.unshift(0)
-console.log(num)
+console.log(`zero = ${num}`)
 
 // 7. add one 99 in end of array
 let last = num.push(99)
-console.log(num)
+console.log(`addition = ${num}`)
 
 // 8. remove 1 element from start of  array
 let rem = num.shift()
