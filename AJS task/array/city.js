@@ -14,6 +14,7 @@ function cityState(state){
     let filterCityPopulation = filterCityLength.filter((x)=>{
         return x.population < 3382000
     })
+//4 accending decending
     filterCityPopulation.sort((a,b)=>{
         return b.population - a.population
     })
