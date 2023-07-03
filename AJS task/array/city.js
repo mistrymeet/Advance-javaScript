@@ -2,7 +2,7 @@ let data = require("./in.json")
 
 
 // 1 with the name of state give all city related to that state
-function cityState(state){
+function cityToState(state){
     let filterState = data.filter((x)=>{
         return x.state_name === state 
     })
@@ -22,7 +22,7 @@ function cityState(state){
 }
 
 
-let storeFilterState = cityState("Uttar Pradesh")
+let storeFilterState = cityToState("Rājasthān")
 console.log("🚀 ~ file: city.js:13 ~ storeFilterState:", storeFilterState)
 
 //========================================================
@@ -77,4 +77,23 @@ function matchCityName(cityname){
 
 }
 let match = matchCityName("Sūrat")
-console.log("🚀 ~ file: city.js:74 ~ match:", match)
+console.log("🚀 ~ file: city.js:74 ~ match:", match)        
+
+// city to state
+function cityState(cityName){
+    let filterCity = data.filter((x)=>{
+        return x.city === cityName
+    })
+    let filterState = filterCity.filter((x)=>{
+        return x.state_name
+    })
+    let newArr = []
+    for (let i = 0; i < filterState.length; i++) {
+        const element = filterState[i].state_name;
+        newArr.push(element)
+    }
+    return newArr
+}
+
+let cityS = cityState('Cawnpore')
+console.log("🚀 ~ file: city.js:94 ~ cityS:", cityS)
