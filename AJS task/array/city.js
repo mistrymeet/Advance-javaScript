@@ -25,6 +25,7 @@ function cityState(state){
 let storeFilterState = cityState("Uttar Pradesh")
 console.log("🚀 ~ file: city.js:13 ~ storeFilterState:", storeFilterState)
 
+//========================================================
 // 6 city population
 function cityPopulation(population){
     let filterPopulation = data.filter((x)=>{
@@ -42,32 +43,38 @@ function cityPopulation(population){
 
 }
 
-let storePopulation = cityPopulation('1131160')
+let storePopulation = cityPopulation('150371')
 console.log("======================================", storePopulation)
 
-//3 sum population of city by state name
+//============================================================
+//7 sum population of city by state name
 function sumCityPopulation(state){
     let filterState = data.filter((x)=>{
         return x.state_name === state
     })
-
-    newArr = []
-    for (let i = 0; i < filterState.length; i++) {
-       let element = filterState[i].population;
-       newArr.push(element)
-    }
+    let total = 0;
+    filterState.reduce((acc,curr)=>{
+        total = parseInt(curr.population) + total
+        return total
+    })
+    console.log(total)
     
-    let element = ''
-    // for (let y = 0; y < newArr.length; y++) {
-    //      element += newArr[y];
-    // }
-    for (const iterator of newArr) {
-        element += iterator
-    }
-    return element
-   
 }
+sumCityPopulation("Gujarāt")
 
-let storeCityPopulation = sumCityPopulation("Uttar Pradesh")
-console.log("sum of population ----------->>", storeCityPopulation)
+//=================================================
+// 7 city wise population show
+function matchCityName(cityname){
+    let filterCity = data.filter((x)=>{
+        return x.city === cityname
+    })
+    let population = []
+    for (let i = 0; i < filterCity.length; i++) {
+        const element = filterCity[i].population;
+        population.push(element)
+    }
+    return population
 
+}
+let match = matchCityName("Sūrat")
+console.log("🚀 ~ file: city.js:74 ~ match:", match)
