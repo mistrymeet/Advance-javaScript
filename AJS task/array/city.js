@@ -56,7 +56,7 @@ function sumCityPopulation(state){
     // filterState.reduce((acc,curr)=>{
     //     total = parseInt(curr.population) + total
     //     return total
-    // })
+    // })*/
     filterState.map((x)=>{
         total = parseInt(x.population) + total
     })
@@ -101,7 +101,11 @@ function cityState(cityName){
 let cityS = cityState('Cawnpore')
 console.log("🚀 ~ file: city.js:94 ~ cityS:", cityS)
 
-// population to s
-function populationState(){
-    let filter
-}
+//5 city search
+function citySearch(){
+    let city = data.filter((x)=>{
+        return x.city.toLowerCase().includes("elhi")
+    })
+    console.log("🚀 ~ file: city.js:109 ~ city ~ city:", city)
+} 
+citySearch()
