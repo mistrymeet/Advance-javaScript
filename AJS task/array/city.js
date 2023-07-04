@@ -53,9 +53,12 @@ function sumCityPopulation(state){
         return x.state_name === state
     })
     let total = 0;
-    filterState.reduce((acc,curr)=>{
-        total = parseInt(curr.population) + total
-        return total
+    // filterState.reduce((acc,curr)=>{
+    //     total = parseInt(curr.population) + total
+    //     return total
+    // })
+    filterState.map((x)=>{
+        total = parseInt(x.population) + total
     })
     console.log(total)
     
@@ -97,3 +100,8 @@ function cityState(cityName){
 
 let cityS = cityState('Cawnpore')
 console.log("🚀 ~ file: city.js:94 ~ cityS:", cityS)
+
+// population to s
+function populationState(){
+    let filter
+}
