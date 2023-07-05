@@ -60,7 +60,7 @@ function sumCityPopulation(state){
     filterState.map((x)=>{
         total = parseInt(x.population) + total
     })
-    console.log(total)
+    console.log("total",total)
     
 }
 sumCityPopulation("Gujarāt")
@@ -113,3 +113,36 @@ function citySearch(){
 } 
 citySearch()
 
+// map
+function mapPopulation(){
+    let newArray = [];
+    let newData = data.map((p) => {
+      return p.population < 10000
+        ? newArray.push({
+            cityName: p.city,
+            population: p.population,
+          })
+        : null;
+    });
+    console.log("🚀 ~ file: json-task.js:43 ~ newData ~ newData:", newArray);
+}
+
+mapPopulation()
+
+// map state city
+function mapStateCity(stateName){
+    let state = data.filter((x)=>{
+        return x.state_name === stateName
+    })
+    let newArr = []
+    let city = state.map((x)=>{
+        return x.city ? newArr.push({
+            city:x.city,
+            population:x.population
+        }) : null
+    })
+    return newArr
+}
+
+let mapCity = mapStateCity("Gujarāt")
+console.log("🚀 ~ file: city.js:144 ~ mapCity:", mapCity)

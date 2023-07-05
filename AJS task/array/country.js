@@ -16,7 +16,7 @@ function countryCapital(countryName){
 let cc = countryCapital("India")
 console.log("🚀 ~ file: country.js:12 ~ cc:", cc)
 
-// region to country
+// 2 region to country
 function regionCountry(regionName){
     regionN = data.filter((x)=>{
         return x.region === regionName
@@ -31,7 +31,7 @@ function regionCountry(regionName){
 let reg = regionCountry("Africa")
 console.log("🚀 ~ file: country.js:27 ~ reg:", reg)
 
-// subregion to country
+// 3 subregion to country
 function subRegionCountry(subRegionName){
     let subRegion = data.filter((x)=>{
         return x.subregion === subRegionName
@@ -47,7 +47,7 @@ function subRegionCountry(subRegionName){
 let subC = subRegionCountry("South-Eastern Asia")
 console.log("🚀 ~ file: country.js:48 ~ subC:", subC)
 
-// country to currency
+// 4 country to currency
 function countryCurruncy(countryName){
     let country = data.filter((x)=>{
         return x.name === countryName
@@ -63,7 +63,66 @@ function countryCurruncy(countryName){
 let currency = countryCurruncy("India")
 console.log("🚀 ~ file: country.js:64 ~ currency:", currency)
 
+// 5 region to currncy
+function regionCurrncy(regionName){
+    let regN = data.filter((x)=>{
+        return x.region === regionName
+    })
+    let newArr = []
+    regN.map((x)=>{
+        return x.currency ? newArr.push({
+            name:x.name,
+            currncy:x.currency,
+            currency_name:x.currency_name,
+            currency_symbol:x.currency_symbol
+        }) : null
+    })
+    return newArr
+}
 
+let regCurr = regionCurrncy("Asia")
+console.log("🚀 ~ file: country.js:84 ~ regCurr:", regCurr)
 
+// 6 region curr loop
+function loopRegionCurrency(regionName){
+    let regionN= data.filter((x)=>{
+        return x.region === regionName
+    })
+    let newArr = []
+    for (let i = 0; i < regionN.length; i++) {
+        const element = regionN[i];
+        newArr.push({
+            country:element.name,
+            currency:element.currency,
+            currency_name:element.currency_name,
+            native:element.native
+        })   
+    }
+    return newArr
+}
 
+let newCurr = loopRegionCurrency("Asia")
+console.log("🚀 ~ file: country.js:100 ~ newCurr:", newCurr)
 
+//sub region currncy symbol
+function subRegionCurr(subRegName){
+    let subR = data.filter((x)=>{
+        return x.subregion === subRegName
+    })
+    let newArr = []
+    for (let i = 0; i < subR.length; i++) {
+        const element = subR[i];
+        newArr.push({
+            name:element.name,
+            capital:element.capital,
+            currency:element.currency,
+            currency_name:element.currency_name,
+            currency_symbol:element.currency_symbol,
+            native:element.native
+        })
+    }
+    return newArr
+}
+
+let subCurr = subRegionCurr("Southern Asia")
+console.log("🚀 ~ file: country.js:128 ~ subCurr:", subCurr)
