@@ -104,8 +104,12 @@ console.log("🚀 ~ file: city.js:94 ~ cityS:", cityS)
 //5 city search
 function citySearch(){
     let city = data.filter((x)=>{
-        return x.city.toLowerCase().includes("elhi")
+        return x.city.toLowerCase().includes("rat")
+    })
+    city.sort((a,b)=>{
+        return a.population - b.population
     })
     console.log("🚀 ~ file: city.js:109 ~ city ~ city:", city)
 } 
 citySearch()
+
