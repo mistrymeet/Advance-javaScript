@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function clk(){
+            let num1,num2,res;
+            num1= Number(num1);
+            num2= Number(num2)
+            
+            num1= 5;
+            num2 = 4;
+
+            res = num1 > num2
+            document.getElementById("print").innerHTML = `5 > 4 = ${res}` 
+
+            let apple,pineapple,fruit;
+            fruit = apple > pineapple
+            document.getElementById("printt").innerHTML = `apple > pineapple = ${fruit}`
+
+            let two, twelve, table;
+            two = 2;
+            twelve = 12;
+
+            two = String(two);
+            twelve = String(twelve);
+
+            table = two > twelve;
+            document.getElementById("printtt").innerHTML = `2 > 12 = ${table}`
+
+            let und, re, resu;
+            let nul = null;
+            re = und == nul
+            resu = und === nul
+            document.getElementById("printttt").innerHTML = `undefine == null = ${re}`
+            document.getElementById("printtttt").innerHTML = `undefine === null = ${resu}`
+
+            // let nulll = null;
+            // let math = "\n0\n", r;
+            // r = null == \n0\n
+            // math= String(math);
+
+            // document.getElementById("printttttt").innerHTML = `null == \n0\n == ${r}`;
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="clk()">Click Me</button>
+    <div id="print"></div>
+    <div id="printt"></div>
+    <div id="printtt"></div>
+    <div id="printttt"></div>
+    <div id="printtttt"></div>
+    <div id="printttttt"></div>
+</body>
+</html>

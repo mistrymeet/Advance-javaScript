@@ -126,3 +126,17 @@ function subRegionCurr(subRegName){
 
 let subCurr = subRegionCurr("Southern Asia")
 console.log("🚀 ~ file: country.js:128 ~ subCurr:", subCurr)
+
+//country to phone code 
+function countryPhonecode(countryName){
+    let country = data.filter((x)=>{
+        return x.name === countryName
+    })
+    let phoneCode = country.map((x)=>{
+        return x.phone_code
+    })
+    return phoneCode
+}
+
+let phoneC = countryPhonecode("Israel")
+console.log("🚀 ~ file: country.js:142 ~ phoneC:", phoneC)

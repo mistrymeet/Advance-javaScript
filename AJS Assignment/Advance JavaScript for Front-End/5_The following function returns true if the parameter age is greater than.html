@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            height: 30px;
+            width: auto;
+            background-color: darkslateblue;
+            color: white;
+            border: 2px solid transparent;
+            transition: 0.3s all linear;
+        }
+        button:hover{
+            color: black;
+            background-color: lightblue;
+            border: 2px solid transparent;
+        }
+    </style>
+
+    <script>
+        function checkAge(){
+            let age;
+            age = Number(age);
+
+            age = prompt("Confirm Your Age")
+            if(age>18){
+                alert("You Are Eligible To Join Tour")
+            }else{
+                cnof()
+            }
+            
+        }
+
+        function cnof(){
+            if(confirm("did your parents allows you??")==true){
+                aggr()
+            }else{
+                alert("You Are Not Allow For Tour")
+            }
+        }
+
+        function aggr(){
+            if(confirm("do you agree with your parents dicision??")==true){
+                alert("You Can Allow For Tour")
+            }else{
+                alert("You Are Not Allow For Tour")
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="checkAge()">Click Here For Confirm Your Age</button>
+</body>
+</html>
