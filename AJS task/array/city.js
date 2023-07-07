@@ -102,16 +102,19 @@ let cityS = cityState('Cawnpore')
 console.log("🚀 ~ file: city.js:94 ~ cityS:", cityS)
 
 //5 city search
-function citySearch(){
+function citySearch(search){
     let city = data.filter((x)=>{
-        return x.city.toLowerCase().includes("rat")
+        return x.city.toLowerCase().includes(search)
     })
     city.sort((a,b)=>{
         return a.population - b.population
     })
-    console.log("🚀 ~ file: city.js:109 ~ city ~ city:", city)
+    return city  
 } 
-citySearch()
+
+let final = citySearch("ra")
+console.log("🚀 ~ file: city.js:116 ~ final:", final)
+
 
 // map
 function mapPopulation(){
